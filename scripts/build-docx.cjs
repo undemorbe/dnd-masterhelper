@@ -147,7 +147,7 @@ function parse(src) {
   return out;
 }
 
-const dir = path.join(__dirname, 'content');
+const dir = path.join(__dirname, '..', 'content');
 const files = fs.readdirSync(dir).filter(f => f.endsWith('.txt')).sort();
 const body = [];
 for (const f of files) body.push(...parse(fs.readFileSync(path.join(dir, f), 'utf8')));
